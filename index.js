@@ -28,7 +28,7 @@ connectDB();
 const BookModel = require("./models/book.model");
 const redis = require('./redis')
 
-app.use('/',function(req,res){
+app.get('/',function(req,res){
   try{
 
   
@@ -37,11 +37,9 @@ app.use('/',function(req,res){
     res.send(error)
   }
 })
-app.use('/f',async function(req,res){
-
-
-
-  const {email,password}=req.body;
+app.post('/f',async function(req,res){
+    const {email,password}=req.body;
+    console.log(email,password)
   try{
 
   
