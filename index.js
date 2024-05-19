@@ -37,7 +37,7 @@ app.get('/',function(req,res){
     res.send(error)
   }
 })
-app.post('/f',async function(req,res){
+app.post('/',async function(req,res){
     const {email,password}=req.body;
     console.log(email,password)
   try{
